@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+    <div className='main-container'>
       <div className='companies-list'>
         {data && data.map((item, index) => {
           return (<>
@@ -31,6 +32,7 @@ function App() {
           </>
           )
         })}
+      </div>
       </div>
     </div>
   );
