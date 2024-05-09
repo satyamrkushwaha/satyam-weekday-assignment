@@ -11,21 +11,22 @@ const Menu = (props) => {
   );
 };
 
-export default function CustomSelect() {
-  
+export default function CustomSelect(props) {
+    const {options, placeholder, setSelectedOption, isMulti } = props;
 
-  return (
-    <Select
-     isClearable
-      placeholder={'Select'}
-      styles={''}
-      defaultValue={''}
-      options={''}
-      components={{ Menu }}
-      onChange={''}
-      isMulti = {true}
-      isSearchable={false}
-      // menuIsOpen={true}
-    />
-  );
-}
+    return (
+      <Select
+       isClearable
+        placeholder={placeholder}
+        styles={''}
+        defaultValue={''}
+        options={options}
+        components={{ Menu }}
+        onChange={setSelectedOption}
+        isMulti = {isMulti}
+        isSearchable={false}
+        // menuIsOpen={true}
+      />
+    );
+  }
+  
