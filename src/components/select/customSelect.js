@@ -1,5 +1,6 @@
 import React from 'react';
 import Select, { components } from 'react-select';
+import { customStyleSelected } from './selectStyle';
 
 const Menu = (props) => {
   return (
@@ -18,7 +19,7 @@ export default function CustomSelect(props) {
       <Select
        isClearable
         placeholder={placeholder}
-        styles={''}
+        styles={customStyleSelected}
         defaultValue={''}
         options={options}
         components={{ Menu }}
