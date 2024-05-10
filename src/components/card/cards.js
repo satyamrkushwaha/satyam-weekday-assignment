@@ -4,7 +4,7 @@ import '../../asset/styles/Card.css'
 import Button from '@mui/material/Button';
 
 
-export default function Card({ data }) {
+export default function Cards({ data }) {
 
   const { companyName, jobDetailsFromCompany, jobRole, location, minExp, maxExp, minJdSalary, maxJdSalary, logoUrl, salaryCurrencyCode, jdLink } = data
 
