@@ -163,6 +163,16 @@ button {
 }
 
 
+
+
+@media screen and (max-width: 1200px) {
+
+    .card-container {
+        max-width: 300px;
+    }
+
+}
+
 @media screen and (max-width: 900px) {
 
     .card-container {
@@ -170,11 +180,10 @@ button {
     }
 
 }
-
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 600px) {
 
     .card-container {
-        max-width: 300px;
+        max-width: 100%;
     }
 
 }
