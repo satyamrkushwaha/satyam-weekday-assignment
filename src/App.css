@@ -12,7 +12,7 @@
   padding-top: 1.5rem;
 }
 
-.company-card:hover{
+.company-card:hover {
   transition: all .2s ease-in-out;
   transform: scale(1.01);
 }
@@ -34,4 +34,3 @@
   background-color: rgba(255, 255, 255, 1);
   z-index: 1;
 }
-

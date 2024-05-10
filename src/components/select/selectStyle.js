@@ -3,11 +3,11 @@ export const customStyleSelected = {
         ...styles,
         "@media only screen and (max-width: 900px)": {
             ...styles["@media only screen and (max-width: 900px)"],
-            minWidth : "30%"
+            minWidth: "30%"
         },
         "@media only screen and (max-width: 600px)": {
             ...styles["@media only screen and (max-width: 600px)"],
-            minWidth : "100%"
+            minWidth: "100%"
         },
     }),
 
@@ -15,7 +15,7 @@ export const customStyleSelected = {
         ...styles,
         fontSize: '13px',
         textAlign: 'left',
-        minWidth:'150px',
+        minWidth: '150px',
         alignItems: 'center',
         cursor: 'default',
         display: 'flex',
@@ -36,19 +36,19 @@ export const customStyleSelected = {
         },
         "@media only screen and (max-width: 600px)": {
             ...styles["@media only screen and (max-width: 600px)"],
-            minWidth : "100%"
+            minWidth: "100%"
         },
     }),
-  
+
     dropdownIndicator: base => ({
         ...base,
-        cursor:"pointer",
+        cursor: "pointer",
 
-      }),
+    }),
     menu: base => ({
         ...base,
         border: 'solid 1px #e6e7e9',
-        fontSize : "12px",
+        fontSize: "12px",
         boxShadow: '0px 0px 25px rgba(0,0,0,0.05), 0px 0px 5px rgba(0,0,0,0.05)',
     }),
     menuList: base => ({
@@ -59,7 +59,7 @@ export const customStyleSelected = {
         return {
             ...styles,
             // backgroundColor: isSelected ? 'rgb(73, 67, 218,0.5)' :'#fff',
-            color: isSelected ? '#fff' :'#5e5e5e',
+            color: isSelected ? '#fff' : '#5e5e5e',
             cursor: isDisabled ? 'not-allowed' : 'pointer',
             borderRadius: "2px",
             padding: '10px 8px',
@@ -70,5 +70,5 @@ export const customStyleSelected = {
             },
         };
     },
-  
-  };
+
+};

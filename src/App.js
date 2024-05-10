@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { getSampleJdJSON } from './data/sampleJDJSON';
 import Card from './components/Card/card.js';
 import CustomSelect from './components/select/customSelect.js';
-import { minExpOptions, groupedOptions, minPayOptions  } from './constants/constants.js';
+import { minExpOptions, groupedOptions, minPayOptions } from './constants/constants.js';
 
 function App() {
   const sampleJdData = getSampleJdJSON();
@@ -29,23 +29,23 @@ function App() {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
     return sampleJdData.slice(start, end);
-};
-  
+  };
+
 
   const handleScroll = () => {
     if (
-        window.innerHeight + document.documentElement.scrollTop >=
-        document.documentElement.offsetHeight
+      window.innerHeight + document.documentElement.scrollTop >=
+      document.documentElement.offsetHeight
     ) {
       fetchData();
     }
-};
+  };
 
 
   useEffect(() => {
     fetchData();
   }, []);
-  
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -55,7 +55,7 @@ function App() {
   return (
     <div className="App">
       <div className='filter-container'>
-      <CustomSelect isMulti={true} options={groupedOptions} placeholder="Role" setSelectedOption={setSelectedRole} />
+        <CustomSelect isMulti={true} options={groupedOptions} placeholder="Role" setSelectedOption={setSelectedRole} />
         <CustomSelect isMulti={false} options={minPayOptions} placeholder="Minimum Base Pay Salary" setSelectedOption={setSelectedMinPay} />
         <CustomSelect isMulti={false} options={minExpOptions} placeholder="Experience" setSelectedOption={setSelectedMinExp} />
         <CustomSelect isMulti={true} options={locationOptions} placeholder="Location" setSelectedOption={setSelectedLocation} />
@@ -91,7 +91,7 @@ function App() {
               </div>
             </>
             )
-          })) }
+          }))}
         </div>
       </div>
     </div>
