@@ -47,6 +47,13 @@ Filters for :
 - The Salary
 - The Location
 
+## Evaluation
+- Filters
+- Infinite scroll
+- Null experience is handled
+- No Results is handled
+- Responsiveness for desktop, tablet, mobile
+
 
 ## Technologies Used
 - React.js
