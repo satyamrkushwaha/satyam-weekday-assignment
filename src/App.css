@@ -34,3 +34,46 @@
   background-color: rgba(255, 255, 255, 1);
   z-index: 1;
 }
+
+
+@media  screen and (max-width: 600px) {
+
+  .companies-list {
+    margin-left: 0px;
+    justify-content: center;
+  }
+
+  .filter-container {
+    margin-left: 0px;
+    justify-content: center;
+  }
+
+}
+@media  screen and (max-width: 900px) {
+
+  .companies-list {
+    margin-left: 0px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .filter-container {
+    margin-left: 0px;
+  
+  }
+
+}
+@media  screen and (max-width: 1200px) {
+
+  .companies-list {
+    margin-left: 0px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .filter-container {
+    margin-left: 0px;
+
+  }
+
+}
