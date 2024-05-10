@@ -5,9 +5,9 @@ The candidate application platform is designed to streamline the job search proc
 ## Table of Contents
 - [Project Description](#project-description)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Features & Functionalities](#usage)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
+- [Contributing](#fork-the-repository)
 
 
 ## Project Description
