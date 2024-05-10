@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './asset/styles/App.css';
 import React, { useEffect, useState } from 'react';
 import { getSampleJdJSON } from './data/sampleJDJSON';
-import Card from './components/card/card.js';
 import CustomSelect from './components/select/customSelect.js';
+import Card from './components/card/card.js';
 import { minExpOptions, groupedOptions, minPayOptions } from './constants/constants.js';
 
 function App() {
