@@ -16,6 +16,8 @@ function App() {
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
+  const [scrolled, setScrolled] = useState(false);
+
 
   //Data Fetched from sampleJdJSON
   const fetchData = () => {
@@ -52,9 +54,26 @@ function App() {
   }, [data]);
 
 
+
+  useEffect(() => {
+    const handleFilterScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleFilterScroll);
+    return () => {
+      window.removeEventListener('scroll', handleFilterScroll);
+    };
+  }, []); 
+
+
   return (
     <div className="App">
-      <div className='filter-container'>
+      <div className={`filter-container ${scrolled ? 'scrolled' : ''}`}>
         <CustomSelect isMulti={true} options={groupedOptions} placeholder="Role" setSelectedOption={setSelectedRole} />
         <CustomSelect isMulti={false} options={minPayOptions} placeholder="Minimum Base Pay Salary" setSelectedOption={setSelectedMinPay} />
         <CustomSelect isMulti={false} options={minExpOptions} placeholder="Experience" setSelectedOption={setSelectedMinExp} />
