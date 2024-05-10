@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 
 export default function Cards({ data }) {
 
-  const { companyName, jobDetailsFromCompany, jobRole, location, minExp, maxExp, minJdSalary, maxJdSalary, logoUrl, salaryCurrencyCode, jdLink } = data
+  const { companyName, jobDetailsFromCompany, jobRole, location, minExp, minJdSalary, maxJdSalary, logoUrl, salaryCurrencyCode, jdLink } = data
 
   const [showMore, setShowMore] = useState(false)
 

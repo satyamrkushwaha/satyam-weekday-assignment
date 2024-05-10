@@ -58,7 +58,6 @@ export const customStyleSelected = {
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
         return {
             ...styles,
-            // backgroundColor: isSelected ? 'rgb(73, 67, 218,0.5)' :'#fff',
             color: isSelected ? '#fff' : '#5e5e5e',
             cursor: isDisabled ? 'not-allowed' : 'pointer',
             borderRadius: "2px",

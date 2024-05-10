@@ -1,3 +1,4 @@
+//Options for Minimum Experience
 export const minExpOptions = [
     {
       label: '1 Year',
@@ -42,6 +43,7 @@ export const minExpOptions = [
   ];
 
 
+  //Options for Minimum Pay
   export  const minPayOptions = [
     {
       label: '1 LPA',
@@ -90,7 +92,7 @@ export const minExpOptions = [
   ];
 
 
-
+//Options for Job Role
   export  const engineeringOptions = [
     {
       label: 'Frontend',

@@ -35,43 +35,7 @@ function App() {
   };
 
 
-  const handleScroll = () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop >=
-      document.documentElement.offsetHeight
-    ) {
-      fetchData();
-    }
-  };
-
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [data]);
-
-
-
-  useEffect(() => {
-    const handleFilterScroll = () => {
-      if (window.scrollY > 0) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleFilterScroll);
-    return () => {
-      window.removeEventListener('scroll', handleFilterScroll);
-    };
-  }, []); 
-
-
+///Filtering logic
   const filterData = () => {
     return data.filter(item => {
       let roleFilter = true;
@@ -102,6 +66,45 @@ function App() {
   const filteredData = filterData();
 
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+
+
+//Function to handle scroll for the infinite scroll
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop >=
+      document.documentElement.offsetHeight
+    ) {
+      fetchData();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [data]);
+
+
+//Function to handle scroll for the filter to show border when scroll
+  useEffect(() => {
+    const handleFilterScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleFilterScroll);
+    return () => {
+      window.removeEventListener('scroll', handleFilterScroll);
+    };
+  }, []); 
+
+
   return (
     <div className="App">
       <div className={`filter-container ${scrolled ? 'scrolled' : ''}`}>
@@ -112,7 +115,7 @@ function App() {
       </div>
       <div className='main-container'>
         <div className='companies-list'>
-          {data && (filteredData.map((item, index) => {
+          {data && (filteredData.map((item) => {
             return (<>
               <div className='company-card' key={item?.jdUid}>
                 <Card data={item} />
