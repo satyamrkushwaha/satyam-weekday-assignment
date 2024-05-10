@@ -13,7 +13,7 @@ export default function Card({ data }) {
   //Function to toggle show more/less
   const handleShowMore = () => {
     setShowMore(!showMore)
-  }
+  }   
   return (
     <div className='card-container'>
       <div className='card-details-container'>
