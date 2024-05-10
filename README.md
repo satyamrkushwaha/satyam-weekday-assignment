@@ -21,33 +21,35 @@ To run the candidate application platform locally, follow these steps:
 
 ```bash
 # Clone the repository
-git clone [GitHub Repository URL]
+git clone [https://github.com/satyamrkushwaha/satyam-weekday-assignment.git]
 
 # Navigate into the project directory
-cd [project-directory]
+cd [satyam-weekday-assignment]
 
 # Install dependencies
 npm install
 
 ### `npm start`
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-
-
+Runs the app in the development mode.
+Open [http://localhost:3000] to view it in your browser.
 
 Once the development server is running, you can access the platform in your web browser at http://localhost:3000.
+exit
 
-Technologies Used
-React.js
-JavaScript
-HTML/CSS
-[Additional technologies/libraries used]
-Contributing
+```
+
+## Technologies Used
+- React.js
+- JavaScript
+- HTML/CSS
+- Material UI
+- React-Select
+
+
 We welcome contributions from the community to enhance the candidate application platform. If you would like to contribute, please follow these guidelines:
 
-Fork the repository
-Create a new branch for your feature or bug fix
-Make your changes and ensure the codebase is properly formatted
-Submit a pull request with a clear description of your changes
+## Fork the repository
+- Create a new branch for your feature or bug fix
+- Make your changes and ensure the codebase is properly formatted
+- Submit a pull request with a clear description of your changes
 
