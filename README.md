@@ -33,9 +33,7 @@ npm install
 Runs the app in the development mode.
 Open [http://localhost:3000] to view it in your browser.
 
-Once the development server is running, you can access the platform in your web browser at http://localhost:3000.
-exit
-
+Once the development server is running, you can access the platform in your web browser at http://localhost:3000
 ```
 
 ## Technologies Used
