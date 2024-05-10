@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import '../../asset/styles/CustomCard.css'
 import Button from '@mui/material/Button';
-
+import UnlockIcon from '../../asset/images/unlock-image.png'
 
 export default function Cards({ data }) {
 
@@ -43,6 +43,8 @@ export default function Cards({ data }) {
         </div>
         <div>
           <Button className='unlock-referral' variant="contained">
+            <img src={UnlockIcon} alt="lock" />
+            <img src={UnlockIcon} alt="lock" />
             Unlock referral asks</Button>
         </div>
       </div>
