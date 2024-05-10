@@ -14,17 +14,43 @@ function App() {
   const [selectedMinExp, setSelectedMinExp] = useState(null);
   const [locationOptions, setLocationOptions] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   //Data Fetched from sampleJdJSON
   const fetchData = () => {
     setLocationOptions(sampleJdData.map((jd) => ({ value: jd.location, label: jd.location })).filter((option, index, self) => self.findIndex((t) => t.value === option.value) === index));
-    setData(sampleJdData);
+    const newData = getMoreData(currentPage, itemsPerPage);
+    setData(prevJobs => [...prevJobs, ...newData]);
+    setCurrentPage(prevPage => prevPage + 1);
   };
+
+  const getMoreData = (page, itemsPerPage) => {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return sampleJdData.slice(start, end);
+};
+  
+
+  const handleScroll = () => {
+    if (
+        window.innerHeight + document.documentElement.scrollTop >=
+        document.documentElement.offsetHeight
+    ) {
+      fetchData();
+    }
+};
 
 
   useEffect(() => {
     fetchData();
   }, []);
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [data]);
+
 
   return (
     <div className="App">
@@ -36,15 +62,12 @@ function App() {
       </div>
       <div className='main-container'>
         <div className='companies-list'>
-
           {data && (data.filter((item) => {
             if (selectedRole || selectedMinPay || selectedMinExp || selectedLocation) {
               let roleFilter = true;
               let property1Filter = true;
               let property2Filter = true;
               let property3Filter = true;
-
-
               if (selectedRole && selectedRole.length > 0) {
                 roleFilter = selectedRole.some((role) => item.jobRole === role.value);
               }
@@ -65,11 +88,8 @@ function App() {
             return (<>
               <div className='company-card' key={item?.jdUid}>
                 <Card data={item} />
-                {index + 1}
               </div>
-
             </>
-
             )
           })) }
         </div>
