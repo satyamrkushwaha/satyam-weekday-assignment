@@ -5,6 +5,7 @@ import { getSampleJdJSON } from './data/sampleJDJSON';
 import CustomSelect from './components/select/customSelect.js';
 import Card from './components/card/customCard.js';
 import { minExpOptions, groupedOptions, minPayOptions } from './constants/constants.js';
+import NoResults from './components/errorStates/noResults.js';
 
 function App() {
   const sampleJdData = getSampleJdJSON();
@@ -71,6 +72,36 @@ function App() {
   }, []); 
 
 
+  const filterData = () => {
+    return data.filter(item => {
+      let roleFilter = true;
+      let property1Filter = true;
+      let property2Filter = true;
+      let property3Filter = true;
+
+      if (selectedRole && selectedRole.length > 0) {
+        roleFilter = selectedRole.some(role => item.jobRole === role.value);
+      }
+
+      if (selectedMinPay) {
+        property1Filter = item.minJdSalary !== null && selectedMinPay.value <= item.minJdSalary;
+      }
+
+      if (selectedMinExp) {
+        property2Filter = item.minExp !== null && selectedMinExp.value >= item.minExp;
+      }
+
+      if (selectedLocation && selectedLocation.length > 0) {
+        property3Filter = selectedLocation.some(property => item.location === property.value);
+      }
+
+      return roleFilter && property1Filter && property2Filter && property3Filter;
+    });
+  };
+
+  const filteredData = filterData();
+
+
   return (
     <div className="App">
       <div className={`filter-container ${scrolled ? 'scrolled' : ''}`}>
@@ -81,29 +112,7 @@ function App() {
       </div>
       <div className='main-container'>
         <div className='companies-list'>
-          {data && (data.filter((item) => {
-            if (selectedRole || selectedMinPay || selectedMinExp || selectedLocation) {
-              let roleFilter = true;
-              let property1Filter = true;
-              let property2Filter = true;
-              let property3Filter = true;
-              if (selectedRole && selectedRole.length > 0) {
-                roleFilter = selectedRole.some((role) => item.jobRole === role.value);
-              }
-              if (selectedMinPay) {
-                property1Filter = item.minJdSalary !== null && selectedMinPay.value <= item.minJdSalary;
-              }
-              if (selectedMinExp) {
-                property2Filter = item.minExp !== null && selectedMinExp.value >= item.minExp;
-              }
-              if (selectedLocation && selectedLocation.length > 0) {
-                property3Filter = selectedLocation.some((property) => item.location === property.value);
-              }
-              return roleFilter && property1Filter && property2Filter && property3Filter
-            } else {
-              return true;
-            }
-          }).map((item, index) => {
+          {data && (filteredData.map((item, index) => {
             return (<>
               <div className='company-card' key={item?.jdUid}>
                 <Card data={item} />
@@ -111,6 +120,7 @@ function App() {
             </>
             )
           }))}
+          {filteredData.length === 0 && <NoResults />}
         </div>
       </div>
     </div>
