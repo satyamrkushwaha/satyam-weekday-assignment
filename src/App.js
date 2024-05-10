@@ -3,7 +3,7 @@ import './asset/styles/App.css';
 import React, { useEffect, useState } from 'react';
 import { getSampleJdJSON } from './data/sampleJDJSON';
 import CustomSelect from './components/select/customSelect.js';
-import Card from './components/card/cards.js';
+import Card from './components/card/customCard.js';
 import { minExpOptions, groupedOptions, minPayOptions } from './constants/constants.js';
 
 function App() {
