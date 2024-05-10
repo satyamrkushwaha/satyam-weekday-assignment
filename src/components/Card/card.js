@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import '../../asset/styles/card.css'
+import '../../asset/styles/Card.css'
 import Button from '@mui/material/Button';
 
 
